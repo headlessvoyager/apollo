@@ -1,5 +1,4 @@
-+++
-title = "Markdown Test"
++++title = "Markdown Test"
 date = "2022-01-01"
 updated = "2022-05-01"
 
@@ -9,7 +8,6 @@ tags=["example"]
 [extra]
 comment = true
 +++
-
 # H1
 ## H2
 ### H3

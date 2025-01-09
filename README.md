@@ -4,24 +4,11 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 
 <sub><sup>Named after the greek god of knowledge, wisdom and intellect</sup></sub>
 
-<details open>
-  <summary>Dark theme</summary>
-
-  ![blog-dark](./screenshot-dark.png)
-</details>
-
-<details>
-  <summary>Light theme</summary>
-
-![blog-light](./screenshot.png)
-</details>
-
 ## Features
 
 - [X] Pagination
 - [X] Themes (light, dark, auto)
 - [X] Projects page
-- [X] Analytics using [GoatCounter](https://www.goatcounter.com/) / [Umami](https://umami.is/)
 - [x] Social Links
 - [x] MathJax Rendering
 - [x] Taxonomies
@@ -34,8 +21,9 @@ Modern and minimalistic blog theme powered by [Zola](https://getzola.org). See a
 ## Installation
 
 1. Download the theme
-```
-git submodule add https://github.com/not-matthias/apollo themes/apollo
+
+```bash
+git submodule add git@github.com:headlessvoyager/apollo.git  themes/apollo
 ```
 
 2. Add the following to the top of your `config.toml`

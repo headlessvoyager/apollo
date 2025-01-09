@@ -37,10 +37,10 @@
 
     {% else %}
     <title>
-        {% if page.title %} {{ page.title }}
-        {% elif section.title %} {{ section.title }}
-        {% elif config.title %} {{ config.title }}
-        {% else %} Post {% endif %}
+        {% if page.title %} {{ page.title }} | {{ config.title | default(value="Home") }}
+        {% elif section.title %} {{ section.title }} | {{ config.title | default(value="Home") }}
+        {% elif config.title %} {{ config.title }} | {{ config.title | default(value="Home") }}
+        {% else %} Post | {{ config.title | default(value="Home") }} {% endif %}
     </title>
 
         {% if not page_has_og_title %}
@@ -66,7 +66,10 @@
 
     {# Favicon #}
     {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
     {% endif %}
 
     {# Font from cdn or disk #}
@@ -75,27 +78,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@4.5.8/index.min.css">
     {% else %}
         <link href={{ get_url(path="fonts.css") }} rel="stylesheet" />
-    {% endif %}
-
-    {# Analytics #}
-    {% if config.extra.analytics.enabled %}
-        {% if config.extra.analytics.umami.website_id %}
-            {% set website_id = config.extra.analytics.umami.website_id %}
-            {% set host_url = config.extra.analytics.umami.host_url | default(value="https://api-gateway.umami.dev/") %}
-
-            <script defer src="/js/imamu.js" data-website-id="{{ website_id }}" data-host-url="{{ host_url }}"></script>
-        {% endif %}
-
-        {% if config.extra.analytics.goatcounter.user %}
-            {% set user = config.extra.analytics.goatcounter.user %}
-            {% set host = config.extra.analytics.goatcounter.host | default(value="goatcounter.com") %}
-
-            <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
-            <noscript>
-                {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
-                <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
-            </noscript>
-        {% endif %}
     {% endif %}
 
     {# Fancy Codeblock #}

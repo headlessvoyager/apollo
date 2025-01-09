@@ -15,11 +15,11 @@ $text-1: darken($bg-0, 60%);
 
   --border-color: var(--bg-2);
 
-  --primary-color: #ef5350;
+        --primary-color: #7FBBB3;
   --hover-color: white;
 
-  // invert colour on hover for consistency 
+        // Invert color on hover for consistency
   .social :hover {
-    filter: invert(1)
+    filter: invert(1);
   }
 }

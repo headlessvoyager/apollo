@@ -1,5 +1,4 @@
-+++
-title = "Configuring Apollo"
++++title = "Configuring Apollo"
 date = "2024-07-09"
 
 [taxonomies]
@@ -9,7 +8,6 @@ tags=["documentation"]
 repo_view = true
 comment = true
 +++
-
 # Site Configuration
 
 ## Theme Mode (`theme`)
@@ -120,40 +118,6 @@ You can add anchor links by adding the following to your `_index.md`:
 insert_anchor_links = "heading"
 ```
 
-## Analytics
-
-Enable or disable analytics tracking:
-
-```toml
-[extra.analytics]
-enabled = false
-```
-
-After enabling analytics, configure GoatCounter or Umami.
-
-### GoatCounter
-
-Configure GoatCounter analytics:
-
-```toml
-[extra.analytics.goatcounter]
-user = "your_user"           # Your GoatCounter username
-host = "example.com"         # Optional: Custom host
-```
-
-### Umami Analytics
-
-Configure Umami analytics:
-
-```toml
-[extra.analytics.umami]
-website_id = "43929cd1-1e83...."                    # Your Umami website ID
-host_url = "https://stats.mywebsite.com"            # Optional: Custom host URL
-```
-
-
----
-
 
 # Page configuration
 
@@ -182,13 +146,11 @@ When enabled, this allows readers to leave comments on your blog posts. This fea
 
 Example configuration in [content/posts/configuration.md](https://github.com/not-matthias/apollo/blob/main/content/posts/configuration.md):
 ```toml
-+++
-title = "Configuring Apollo"
++++title = "Configuring Apollo"
 
 [extra]
 comment = true
-+++
-```
++++```
 
 Comments via [utterances](https://utteranc.es) can be configured in `template/_giscus_script.html` like this:
 ```html
